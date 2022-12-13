@@ -5,22 +5,22 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue";
-import { iconProps } from "./icon";
+import { computed, defineComponent } from 'vue'
+import { iconProps } from './icon'
 
 export default defineComponent({
-  name: "HIcon",
+  name: 'HIcon',
   props: iconProps,
   setup(props) {
     const style = computed(() => {
-      const { size, color } = props;
-      if (!size && !color) return {};
+      const { size, color } = props
+      if (!size && !color) return {}
       return {
-        ...(props.size ? { "font-size": props.size + "px" } : {}),
+        ...(props.size ? { 'font-size': props.size + 'px' } : {}),
         ...(props.color ? { color: props.color } : {}),
-      };
-    });
-    return { style };
+      }
+    })
+    return { style }
   },
-});
+})
 </script>

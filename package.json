@@ -11,6 +11,8 @@
     "build": "gulp -f build/gulpfile.ts",
     "dev:docs": "pnpm -C docs dev",
     "build:docs": "pnpm -C docs  build",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 --cache",
+    "lint:fix": "pnpm run lint --fix",
     "prepare": "husky install"
   },
   "author": "Hg",
@@ -22,11 +24,13 @@
     "vue": "^3.2.36"
   },
   "devDependencies": {
+    "@h-material/eslint-config": "workspace:^0.0.1",
     "@types/gulp": "^4.0.10",
     "@types/gulp-autoprefixer": "^0.0.33",
     "@types/gulp-clean-css": "^4.3.0",
     "@types/gulp-sass": "^5.0.0",
     "@types/sass": "^1.43.1",
+    "cz-git": "^1.4.1",
     "eslint": "^8.29.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",

@@ -1,6 +1,6 @@
 // 打包方式：串行(series)  并行(parallel)
-import { series, parallel } from "gulp";
-import { run, withTaskName } from "./utils";
+import { series, parallel } from 'gulp'
+import { run, withTaskName } from './utils'
 
 // gulp 不叫打包，做代码转化 vite
 
@@ -14,9 +14,9 @@ import { run, withTaskName } from "./utils";
  */
 
 export default series(
-  withTaskName("clean", () => run("rm -rf ./dist")), // 删除dist目录
-  withTaskName("buildThemeChalk", () => run("pnpm -C  packages/utils build")),
-  withTaskName("buildPackages", () =>
-    run("pnpm -C  packages/theme-chalk build")
+  withTaskName('clean', () => run('rm -rf ./dist')), // 删除dist目录
+  withTaskName('buildThemeChalk', () => run('pnpm -C  packages/utils build')),
+  withTaskName('buildPackages', () =>
+    run('pnpm -C  packages/theme-chalk build')
   )
-);
+)
