@@ -1,6 +1,6 @@
 // 打包方式：串行(series)  并行(parallel)
-import { series, parallel } from 'gulp'
-import { run, withTaskName } from './utils'
+import { series } from 'gulp'
+import { run, withTaskName } from './utils/'
 
 // gulp 不叫打包，做代码转化 vite
 

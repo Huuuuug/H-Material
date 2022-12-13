@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "keywords": [],
   "scripts": {
     "dev": "vite"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "vite": "^4.0.0"
