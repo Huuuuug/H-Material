@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "packageManager": "pnpm@7.12.2",
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "pnpm -C play dev",
+    "build": "gulp -f build/gulpfile.ts",
+    "dev:docs": "pnpm -C docs dev",
+    "build:docs": "pnpm -C docs  build",
+    "prepare": "husky install"
+  },
+  "author": "Hg",
+  "license": "ISC",
+  "engines": {
+    "node": ">= 16"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.36"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.10",
+    "@types/gulp-autoprefixer": "^0.0.33",
+    "@types/gulp-clean-css": "^4.3.0",
+    "@types/gulp-sass": "^5.0.0",
+    "@types/sass": "^1.43.1",
+    "eslint": "^8.29.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "6.0.0-alpha.1",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.1",
+    "sass": "^1.56.2",
+    "sucrase": "^3.29.0",
+    "typescript": "^4.9.4",
+    "vue": "^3.2.36"
+  },
+  "dependencies": {
+    "@h-material/components": "workspace:^1.0.0",
+    "@h-material/theme-chalk": "workspace:^1.0.0",
+    "@h-material/utils": "workspace:^1.0.0"
+  }
+}
