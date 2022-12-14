@@ -2,13 +2,13 @@
   "name": "@h-material/eslint-config",
   "version": "0.0.1",
   "description": "ESLint Config",
-  "main": "index.js",
   "keywords": [],
+  "license": "MIT",
+  "author": "",
   "files": [
     "index.js"
   ],
-  "author": "",
-  "license": "MIT",
+  "main": "index.js",
   "publishConfig": {
     "access": "public"
   },

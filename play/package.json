@@ -2,13 +2,13 @@
   "name": "@h-material/play",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
   "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.ts",
   "scripts": {
     "dev": "vite"
   },
-  "license": "ISC",
-  "author": "",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "vite": "^4.0.0"

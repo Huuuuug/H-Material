@@ -5,16 +5,16 @@
  * gulp-autoprefixer:添加样式前缀  gulp-clean-css：压缩css
  */
 
+import path from 'path'
 import gulpSass from 'gulp-sass'
 import dartSass from 'sass'
 import autoPrefixer from 'gulp-autoprefixer'
 import cleanCss from 'gulp-clean-css'
-import path from 'path'
 
 /**
  * gulp是类似一个管道的方式执行，从入口开始到出口，中间一步步执行
  */
-import { series, src, dest } from 'gulp'
+import { dest, series, src } from 'gulp'
 /**
  * 对sass文件做处理
  */

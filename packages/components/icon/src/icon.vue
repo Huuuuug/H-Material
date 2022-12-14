@@ -1,6 +1,6 @@
 <template>
   <i class="h-icon" :style="style">
-    <slot></slot>
+    <slot />
   </i>
 </template>
 
@@ -16,7 +16,7 @@ export default defineComponent({
       const { size, color } = props
       if (!size && !color) return {}
       return {
-        ...(props.size ? { 'font-size': props.size + 'px' } : {}),
+        ...(props.size ? { 'font-size': `${props.size}px` } : {}),
         ...(props.color ? { color: props.color } : {}),
       }
     })

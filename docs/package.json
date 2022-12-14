@@ -2,18 +2,18 @@
   "name": "docs",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "index.ts",
   "scripts": {
     "dev": "vitepress dev .",
     "build": "vitepress build ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "vitepress": "1.0.0-alpha.31"
-  },
   "dependencies": {
     "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.31"
   }
 }
