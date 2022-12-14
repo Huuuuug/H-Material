@@ -26,6 +26,8 @@
     "@h-material/utils": "workspace:^1.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "@h-material/eslint-config": "workspace:^0.0.1",
     "@types/gulp": "^4.0.10",
     "@types/gulp-autoprefixer": "^0.0.33",
@@ -48,5 +50,8 @@
   },
   "engines": {
     "node": ">= 16"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
   }
 }
