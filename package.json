@@ -9,6 +9,7 @@
   "license": "ISC",
   "author": "Hg",
   "scripts": {
+    "cz": "czg",
     "dev": "pnpm -C play dev",
     "build": "gulp -f build/gulpfile.ts",
     "dev:docs": "pnpm -C docs dev",
@@ -34,7 +35,9 @@
     "@types/gulp-clean-css": "^4.3.0",
     "@types/gulp-sass": "^5.0.0",
     "@types/sass": "^1.43.1",
+    "commitizen": "^4.2.6",
     "cz-git": "^1.4.1",
+    "czg": "^1.4.1",
     "eslint": "^8.29.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -50,6 +53,11 @@
   },
   "engines": {
     "node": ">= 16"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
