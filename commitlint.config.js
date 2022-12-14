@@ -31,7 +31,11 @@ module.exports = {
      * type[scope]: [function] description
      *      ^^^^^
      */
-    'scope-enum': [2, 'always', ['packages', 'internal', 'docs', 'play']],
+    'scope-enum': [
+      2,
+      'always',
+      ['packages', 'internal', 'docs', 'play', 'build', 'script', 'project'],
+    ],
     /**
      * type[scope]: [function] description [No more than 72 characters]
      *      ^^^^^
