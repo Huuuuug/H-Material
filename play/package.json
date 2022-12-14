@@ -9,6 +9,9 @@
   "scripts": {
     "dev": "vite"
   },
+  "dependencies": {
+    "@h-material/components": "workspace:^1.0.0"
+  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "vite": "^4.0.0"

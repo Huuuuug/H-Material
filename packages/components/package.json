@@ -1,11 +1,22 @@
 {
   "name": "@h-material/components",
   "version": "1.0.0",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
+  "keywords": [
+    "HUI",
+    "vue3组件库"
+  ],
+  "license": "MIT",
+  "author": "hg",
+  "files": [
+    "es",
+    "lib"
+  ],
   "main": "index.ts",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp",
+    "build:vite": "vite build"
+  },
+  "devDependencies": {
+    "@h-material/theme-chalk": "workspace:^1.0.0"
   }
 }
