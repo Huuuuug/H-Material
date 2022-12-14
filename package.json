@@ -42,7 +42,6 @@
     "gulp-sass": "^5.1.0",
     "gulp-typescript": "6.0.0-alpha.1",
     "husky": "^8.0.2",
-    "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "sass": "^1.56.2",
     "sucrase": "^3.29.0",
@@ -52,9 +51,7 @@
   "engines": {
     "node": ">= 16"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
   }
 }
