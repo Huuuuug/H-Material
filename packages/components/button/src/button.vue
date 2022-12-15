@@ -1,1 +1,15 @@
-<template>按钮</template>
+<template>
+  <button class="h-button" :class="styleClass">11</button>
+</template>
+
+<script lang="ts" setup>
+import { computed } from 'vue'
+import { buttonProps } from './button'
+defineOptions({
+  name: 'HButton',
+})
+
+const props = defineProps(buttonProps)
+
+const styleClass = computed(() => `h-button--${props.type}`)
+</script>

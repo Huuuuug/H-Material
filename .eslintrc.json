@@ -1,7 +1,4 @@
 {
   "root": true,
-  "extends": ["./internal/eslint-config/index.js"]
-  // "parserOptions": {
-  //   "ecmaVersion": 6
-  // }
+  "extends": ["@h-material/eslint-config"]
 }

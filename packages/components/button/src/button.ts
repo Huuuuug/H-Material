@@ -20,10 +20,6 @@ export const buttonProps = {
     values: buttonTypes,
     default: '',
   },
-  /**
-   * @description button size
-   */
-  size: buttonSize,
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
