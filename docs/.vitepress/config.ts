@@ -37,6 +37,7 @@ const sidebar: DefaultTheme.Sidebar = {
 
 export default defineConfig({
   title: `H Material`,
+  description: 'a Vue 3 based component library for designers and developers',
   lang: 'cn-ZH',
   themeConfig: {
     logo: '/logo.svg',

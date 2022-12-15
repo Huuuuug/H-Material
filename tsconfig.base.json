@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES2018",
+    "module": "ESNext",
+    "sourceMap": false,
+    "moduleResolution": "node",
+    "strict": true,
+    "allowJs": false,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "rootDir": ".",
+    "types": ["unplugin-vue-define-options/macros-global"],
+    "baseUrl": ".", // 解析非相对模块名的基准目录
+    "paths": {
+      "@h-material/*": ["packages/*"]
+    } // 模块名到基于 baseUrl的路径映射的列表。
+  }
+}
