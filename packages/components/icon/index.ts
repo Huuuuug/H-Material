@@ -1,7 +1,7 @@
 import { withInstall } from '../with-install'
 import Icon from './src/icon.vue'
 
-const WIcon = withInstall(Icon)
+const HIcon = withInstall(Icon)
 
-export { WIcon }
-export default WIcon
+export { HIcon }
+export default HIcon

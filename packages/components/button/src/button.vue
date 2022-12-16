@@ -1,5 +1,7 @@
 <template>
-  <button class="h-button" :class="styleClass">11</button>
+  <button class="h-button" :class="styleClass">
+    <slot />
+  </button>
 </template>
 
 <script lang="ts" setup>
