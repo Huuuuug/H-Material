@@ -1,8 +1,10 @@
 @use 'sass:map';
 
+@use 'common/var' as *;
 @use './mixins/mixins.scss' as *;
+@use './mixins/button' as *;
 
-.#{$namespace}-button--primary {
+.#{$namespace}-button {
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -15,99 +17,25 @@
   user-select: none;
   line-height: 1;
   box-sizing: border-box;
-  background-color: #7b68ee;
+  background-color: getCssVar('button', 'bg-color');
   padding: 8px 15px;
   border: none;
   border-radius: 4px;
   color: #fff;
   transition: 0.1s;
+  -webkit-appearance: none;
   &:hover,
   &:focus {
     color: #fff;
     outline: none;
-    background-color: #8c7bed;
-    border-color: #8c7bed;
+    background-color: getCssVar('button', 'hover', 'bg-color');
   }
-}
-.#{$namespace}-button--success {
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 32px;
-  vertical-align: middle;
-  outline: none;
-  white-space: nowrap;
-  text-align: center;
-  user-select: none;
-  line-height: 1;
-  box-sizing: border-box;
-  background-color: #67c23a;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  transition: 0.1s;
-  &:hover,
-  &:focus {
-    color: #fff;
-    outline: none;
-    background-color: #73ce46;
-    border-color: #73ce46;
+  & + & {
+    margin-left: 12px;
   }
-}
-.#{$namespace}-button--danger {
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 32px;
-  vertical-align: middle;
-  outline: none;
-  white-space: nowrap;
-  text-align: center;
-  user-select: none;
-  line-height: 1;
-  box-sizing: border-box;
-  background-color: #f56c6c;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  transition: 0.1s;
-  &:hover,
-  &:focus {
-    color: #fff;
-    outline: none;
-    background-color: #ed7676;
-    border-color: #ed7676;
-  }
-}
-
-.#{$namespace}-button--warning {
-  cursor: pointer;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 32px;
-  vertical-align: middle;
-  outline: none;
-  white-space: nowrap;
-  text-align: center;
-  user-select: none;
-  line-height: 1;
-  box-sizing: border-box;
-  background-color: #e6a23c;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  transition: 0.1s;
-  &:hover,
-  &:focus {
-    color: #fff;
-    outline: none;
-    background-color: #e9a94a;
-    border-color: #e9a94a;
+  @each $type in (primary, success, warning, danger, info) {
+    @include m($type) {
+      @include button-variant($type);
+    }
   }
 }

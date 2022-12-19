@@ -17,3 +17,19 @@
 @function getCssVar($args...) {
   @return var(#{joinVarName($args)});
 }
+
+// join var name
+// joinVarName(('button', 'text-color')) => '--h-button-text-color'
+@function joinVarName($list) {
+  $name: '--' + config.$namespace;
+  @each $item in $list {
+    @if ($item != '') {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+// getCssVar set css
+@function getCssVar($args...) {
+  @return var(#{joinVarName($args)});
+}
