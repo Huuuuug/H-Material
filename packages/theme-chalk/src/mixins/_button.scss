@@ -1,0 +1,31 @@
+@use '../mixins/var' as *;
+@use '../mixins/function.scss' as *;
+@use '../common/var.scss' as *;
+
+// h-button css属性配置
+// example $type: primary => --h-button-color-`${$type}`-...
+@mixin button-variant($type) {
+  $button-color-types: (
+    '': (
+      'bg-color': (
+        'color',
+        $type,
+      ),
+    ),
+    'hover': (
+      'bg-color': (
+        'color',
+        $type,
+        'light-3',
+      ),
+    ),
+  );
+  @each $key, $keyMap in $button-color-types {
+    @each $typeColor, $typeColorList in $keyMap {
+      @include css-var-from-global(
+        ('button', $key, $typeColor),
+        $typeColorList
+      );
+    }
+  }
+}

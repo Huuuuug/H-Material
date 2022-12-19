@@ -1,0 +1,7 @@
+@use './mixins/var' as *;
+@use './common/var.scss' as *;
+:root {
+  @each $type in (primary, success, warning, danger, error, info) {
+    @include set-css-type-color($colors, $type);
+  }
+}

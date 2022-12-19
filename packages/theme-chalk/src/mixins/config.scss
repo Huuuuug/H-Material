@@ -1,1 +1,5 @@
-$namespace: 'h'
+$namespace: 'h';
+$common-separator: '-' !default;
+$modifier-separator: '--' !default;
+$element-separator: '__' !default;
+$state-prefix: 'is-' !default;

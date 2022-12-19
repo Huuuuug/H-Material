@@ -14,7 +14,6 @@ module.exports = defineConfig({
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:markdown/recommended',
     'plugin:vue/vue3-recommended',
-    '@vue/prettier',
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
