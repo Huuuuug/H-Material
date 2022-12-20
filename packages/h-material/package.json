@@ -1,0 +1,34 @@
+{
+  "name": "h-material",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "h-material",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue"
+  ],
+  "license": "MIT",
+  "author": "",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./es": "./es/index.mjs",
+    "./lib": "./lib/index.js",
+    "./es/*.mjs": "./es/*.mjs",
+    "./es/*": "./es/*.mjs",
+    "./lib/*.js": "./lib/*.js",
+    "./lib/*": "./lib/*.js",
+    "./*": "./*"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.36"
+  },
+  "types": "es/index.d.ts"
+}
