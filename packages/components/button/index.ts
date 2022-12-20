@@ -1,4 +1,4 @@
-import { withInstall } from '../with-install'
+import { withInstall } from '@h-material/utils'
 import Button from './src/button.vue'
 
 const HButton = withInstall(Button)

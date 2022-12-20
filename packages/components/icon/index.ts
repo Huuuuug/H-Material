@@ -1,4 +1,4 @@
-import { withInstall } from '../with-install'
+import { withInstall } from '@h-material/utils'
 import Icon from './src/icon.vue'
 
 const HIcon = withInstall(Icon)

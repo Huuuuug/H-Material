@@ -1,6 +1,7 @@
 {
   "name": "@h-material/components",
   "version": "1.0.0",
+  "type": "module",
   "keywords": [
     "HUI",
     "vue3组件库"
@@ -13,10 +14,6 @@
   ],
   "main": "index.ts",
   "scripts": {
-    "build": "gulp",
-    "build:vite": "vite build"
-  },
-  "devDependencies": {
-    "@h-material/theme-chalk": "workspace:^1.0.0"
+    "build": "gulp"
   }
 }
