@@ -1,13 +1,13 @@
 import { rollup } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import vue from 'rollup-plugin-vue'
-import Esbuild from 'rollup-plugin-esbuild'
+import esbuild from 'rollup-plugin-esbuild'
 import { compRoot, hRoot } from '../utils/paths'
-import { buildConfigEntries } from '../buildConfig'
+import { buildConfigEntries } from '../build-info'
 import { generateExternal, writeBundles } from '../utils/rollup'
 import type { OutputOptions } from 'rollup'
 
-export const buildComponents = async () => {
+export const buildModules = async () => {
   const bundle = await rollup({
     input: compRoot,
     plugins: [
@@ -15,7 +15,7 @@ export const buildComponents = async () => {
         extensions: ['.mjs', '.js', '.json', '.ts'],
       }),
       vue(),
-      Esbuild({
+      esbuild({
         sourceMap: true,
         target: 'es2018',
         loaders: {
@@ -23,6 +23,7 @@ export const buildComponents = async () => {
         },
       }),
     ],
+    treeshake: true,
     external: await generateExternal({ full: false }),
   })
   await writeBundles(

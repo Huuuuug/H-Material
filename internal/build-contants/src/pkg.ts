@@ -1,0 +1,5 @@
+export const PKG_PREFIX = '@h-material'
+export const PKG_NAME = 'h-material'
+export const PKG_CAMELCASE_NAME = 'HMaterial'
+export const PKG_CAMELCASE_LOCAL_NAME = 'HMaterialLocale'
+export const PKG_BRAND_NAME = 'H Material'

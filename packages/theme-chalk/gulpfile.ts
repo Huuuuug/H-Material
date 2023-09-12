@@ -4,6 +4,7 @@
  * pnpm install gulp-sass @types/gulp-sass @types/sass gulp-autoprefixer @types/gulp-autoprefixer @types/gulp-clean-css gulp-clean-css -w -D
  * gulp-autoprefixer:添加样式前缀  gulp-clean-css：压缩css
  */
+// import { hOutput } from '../../internal/build/src/utils/paths'
 
 import path from 'path'
 import gulpSass from 'gulp-sass'
@@ -41,7 +42,11 @@ function copyFont() {
  */
 
 function copyFullStyle() {
-  const rootDistPath = path.resolve(__dirname, '../../dist/theme-chalk')
+  const rootDistPath = path.join(
+    path.resolve(__dirname, '../../dist'),
+    '/h-material',
+    '/theme-chalk'
+  )
   return src(path.resolve(__dirname, './dist/**')).pipe(dest(rootDistPath))
 }
 

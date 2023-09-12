@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import { hOutput } from './utils/paths'
 import { PKG_NAME } from './constants'
 import type { ModuleFormat } from 'rollup'
+
 export const modules = ['esm', 'cjs'] as const
 export type Module = typeof modules[number]
 
@@ -54,3 +55,5 @@ export const buildConfigEntries = Object.entries(
 
 export type BuildConfig = typeof buildConfig
 export type BuildConfigEntries = [Module, BuildInfo][]
+
+export const target = 'es2018'

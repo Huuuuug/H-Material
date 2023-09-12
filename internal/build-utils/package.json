@@ -1,0 +1,22 @@
+{
+  "name": "@h-material/build-utils",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Build utils for H-material",
+  "keywords": [
+    "h-material"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "unbuild",
+    "dev": "pnpm run stub",
+    "stub": "unbuild --stub"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "unbuild": "^0.7.4"
+  }
+}

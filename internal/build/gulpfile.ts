@@ -1,12 +1,20 @@
 import { mkdir } from 'fs/promises'
-import { series } from 'gulp'
-import { withTaskName } from './src/utils/gulp'
-import { run } from './src/utils/process'
+import { parallel, series } from 'gulp'
+import { run, runTask, withTaskName } from './src'
 import { hOutput } from './src/utils/paths'
-import { buildComponents } from './src/task/buildComponents'
 
 export default series(
   withTaskName('clean', () => run('pnpm run clean')),
   withTaskName('createOutput', () => mkdir(hOutput, { recursive: true })),
-  buildComponents
+  parallel(
+    runTask('buildModules'),
+    runTask('generateTypesDefinitions'),
+    series(
+      withTaskName('buildThemeChalk', () =>
+        run('pnpm run -C packages/theme-chalk build')
+      )
+    )
+  )
 )
+
+export * from './src'

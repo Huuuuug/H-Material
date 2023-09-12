@@ -1,19 +1,21 @@
 {
   "name": "@h-material/build",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
-  "description": "",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
-  "main": "index.js",
+  "description": "Build Toolchain for H-Material",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "start": "gulp -f gulpfile.ts"
+    "start": "gulp --require @esbuild-kit/cjs-loader -f gulpfile.ts",
+    "dev": "pnpm run stub",
+    "stub": "unbuild --stub"
   },
   "peerDependencies": {
     "vue": "^3.2.36"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "chalk": "^5.2.0",
     "consola": "^2.15.3",
@@ -21,6 +23,7 @@
     "rollup": "^3.7.5",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-vue": "^6.0.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "unbuild": "^0.7.4"
   }
 }

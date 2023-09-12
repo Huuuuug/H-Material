@@ -23,4 +23,5 @@ export const run = async (command: string, cwd: string = projRoot) =>
           new Error(`Command failed. \n Command: ${command} \n Code: ${code}`)
         )
     })
+    process.on('exit', onProcessExit)
   })
