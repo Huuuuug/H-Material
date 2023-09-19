@@ -97,9 +97,11 @@ importers:
 
   docs:
     specifiers:
+      h-material: ^0.0.2
       vitepress: 1.0.0-alpha.31
       vue: ^3.2.45
     dependencies:
+      h-material: 0.0.2_vue@3.2.45
       vue: 3.2.45
     devDependencies:
       vitepress: 1.0.0-alpha.31
@@ -3986,6 +3988,14 @@ packages:
     dependencies:
       glogg: 1.0.2
     dev: true
+
+  /h-material/0.0.2_vue@3.2.45:
+    resolution: {integrity: sha512-R/EzvoK7KQ0KMwagSvG3FunK3y0IJJJ2st0PTOYsyBCnFnq6ekeq/HBhkFK8H3UXdHxsEJy2JyvgeZOuZ7E/3A==}
+    peerDependencies:
+      vue: ^3.2.36
+    dependencies:
+      vue: 3.2.45
+    dev: false
 
   /hard-rejection/2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}

@@ -5,36 +5,13 @@ import type { DefaultTheme } from 'vitepress'
 const nav: DefaultTheme.NavItem[] = [
   {
     text: '指南',
-    link: '/guide/',
+    link: '/guide/installation',
   },
   {
     text: '组件',
-    link: '/components/',
+    link: '/components/button',
   },
 ]
-
-// const sidebar: DefaultTheme.Sidebar = {
-//   '/guide/': [
-//     {
-//       text: '基础',
-//       items: [
-//         { text: '设计', link: '/guide/' },
-//         { text: '导航', link: '/guide/' },
-//         { text: '安装', link: '/guide/' },
-//         { text: '快速开始', link: '/guide/' },
-//       ],
-//     },
-//   ],
-//   '/components/': [
-//     {
-//       text: 'Basic基础组件',
-//       items: [
-//         { text: 'Button', link: '/components/button' },
-//         { text: 'Icon', link: '/components/' },
-//       ],
-//     },
-//   ],
-// }
 
 export default defineConfig({
   title: `H Material`,
@@ -46,5 +23,8 @@ export default defineConfig({
     outline: 10,
     nav,
     sidebar: sidebars,
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/Huuuuug/H-Material' },
+    ],
   },
 })

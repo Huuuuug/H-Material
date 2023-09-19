@@ -1,15 +1,21 @@
 import componentLocale from '../json/page/component.json'
+import guideLocal from '../json/page/guide.json'
 
 const getSidebars = () => {
   return {
     '/components/': getComponentsSideBar(),
+    '/guide/': getGuideSideBar(),
   }
 }
-
+// components侧边栏
 function getComponentsSideBar() {
   return Object.values(componentLocale).map((item) =>
     mapPrefix(item, '/components')
   )
+}
+// guide侧边栏
+function getGuideSideBar() {
+  return Object.values(guideLocal).map((item) => mapPrefix(item, '/guide'))
 }
 
 type Item = {
