@@ -12,3 +12,5 @@ export const buildRoot = resolve(projRoot, 'internal', 'build')
 export const buildOutput = resolve(projRoot, 'dist')
 /** `/dist/h-material` */
 export const hOutput = resolve(buildOutput, 'h-material')
+
+export const hPackage = resolve(hRoot, 'package.json')

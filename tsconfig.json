@@ -1,16 +1,17 @@
 {
   "extends": "./tsconfig.base.json",
+  // "files": [],
+  // "references": [
+  //   { "path": "./tsconfig.web.json" },
+  //   { "path": "./tsconfig.play.json" },
+  //   { "path": "./tsconfig.node.json" },
+  // ],
   "compilerOptions": {
-    "lib": [
-      // 编译时用的库
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ]
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "CommonJS"
     }
   },
   "exclude": [

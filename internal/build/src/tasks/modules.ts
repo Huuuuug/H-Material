@@ -1,6 +1,10 @@
 import { rollup } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import vue from 'rollup-plugin-vue'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import VueMacros from 'unplugin-vue-macros/rollup'
+// import vue from 'rollup-plugin-vue'
+import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
 import { excludeFiles } from '@h-material/build-utils'
@@ -20,10 +24,20 @@ export const buildModules = async () => {
   const bundle = await rollup({
     input,
     plugins: [
+      VueMacros({
+        setupComponent: false,
+        setupSFC: false,
+        plugins: {
+          vue: vue({
+            isProduction: false,
+          }),
+          vueJsx: vueJsx(),
+        },
+      }),
       nodeResolve({
         extensions: ['.mjs', '.js', '.json', '.ts'],
       }),
-      vue(),
+      commonjs(),
       esbuild({
         sourceMap: true,
         target: 'es2018',

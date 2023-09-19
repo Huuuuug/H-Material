@@ -1,0 +1,15 @@
+{
+  "basic": {
+    "text": "Basic",
+    "items": [
+      {
+        "text": "Button",
+        "link": "/button"
+      },
+      {
+        "text": "Icon",
+        "link": "/icon"
+      }
+    ]
+  }
+}

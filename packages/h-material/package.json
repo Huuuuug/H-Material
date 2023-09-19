@@ -1,7 +1,7 @@
 {
   "name": "h-material",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0-dev.1",
+  "description": "A Component Library for Vue 3",
   "keywords": [
     "h-material",
     "component library",
@@ -10,7 +10,6 @@
     "vue"
   ],
   "license": "MIT",
-  "author": "",
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "exports": {
@@ -19,16 +18,39 @@
       "import": "./es/index.mjs",
       "require": "./lib/index.js"
     },
-    "./es": "./es/index.mjs",
-    "./lib": "./lib/index.js",
-    "./es/*.mjs": "./es/*.mjs",
-    "./es/*": "./es/*.mjs",
-    "./lib/*.js": "./lib/*.js",
-    "./lib/*": "./lib/*.js",
+    "./es": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs"
+    },
+    "./lib": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    },
+    "./es/*.mjs": {
+      "types": "./es/*.d.ts",
+      "import": "./es/*.mjs"
+    },
+    "./es/*": {
+      "types": [
+        "./es/*.d.ts",
+        "./es/*/index.d.ts"
+      ],
+      "import": "./es/*.mjs"
+    },
+    "./lib/*.js": {
+      "types": "./lib/*.d.ts",
+      "require": "./lib/*.js"
+    },
+    "./lib/*": {
+      "types": [
+        "./lib/*.d.ts",
+        "./lib/*/index.d.ts"
+      ],
+      "require": "./lib/*.js"
+    },
     "./*": "./*"
   },
   "peerDependencies": {
     "vue": "^3.2.36"
-  },
-  "types": "es/index.d.ts"
+  }
 }

@@ -10,7 +10,7 @@ import path from 'path'
 import gulpSass from 'gulp-sass'
 import dartSass from 'sass'
 import autoPrefixer from 'gulp-autoprefixer'
-import cleanCss from 'gulp-clean-css'
+import GulpCleanCss from 'gulp-clean-css'
 
 /**
  * gulp是类似一个管道的方式执行，从入口开始到出口，中间一步步执行
@@ -25,7 +25,7 @@ function compile() {
   return src(path.resolve(__dirname, './src/*.scss'))
     .pipe(sass.sync())
     .pipe(autoPrefixer())
-    .pipe(cleanCss())
+    .pipe(GulpCleanCss())
     .pipe(dest('./dist/css'))
 }
 /**
@@ -34,7 +34,7 @@ function compile() {
 function copyFont() {
   // 从src下单fonts文件夹下的所有文件开始=>压缩=>最终输出到当前目录下dist下的font目录
   return src(path.resolve(__dirname, './src/fonts/**'))
-    .pipe(cleanCss())
+    .pipe(GulpCleanCss())
     .pipe(dest('./dist/fonts'))
 }
 /**
