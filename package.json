@@ -28,7 +28,8 @@
   "dependencies": {
     "@h-material/components": "workspace:*",
     "@h-material/theme-chalk": "workspace:*",
-    "@h-material/utils": "workspace:*"
+    "@h-material/utils": "workspace:*",
+    "html2canvas": "^1.4.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",

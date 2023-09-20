@@ -1,0 +1,24 @@
+#screenShotContainer {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#toolbar {
+  height: 24px;
+  background: #ffffff;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 275px;
+  padding: 10px;
+  .close {
+    background-image: url("../assets/close.png");
+    background-size: cover;
+  
+    &:hover {
+      background-image: url("../assets/close-hover.png");
+    }
+  }
+}
