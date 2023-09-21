@@ -29,7 +29,7 @@
 <script lang="ts" setup>
 import { nextTick, ref, watch } from 'vue'
 import html2canvas from 'html2canvas'
-import { useBursh } from './hooks/useBrush'
+import { useBursh } from './useBrush'
 import { CTX_DEFAULT_ATTRIBUTES } from './constants'
 
 import type { FourCornersPositon, PositionObj } from './types'
@@ -84,6 +84,13 @@ let shotRectanglePos: PositionObj = {
   width: 0,
   height: 0,
 }
+// 裁剪区四个角的位置信息
+const shotRectFourCornersPos = ref<FourCornersPositon>({
+  startX: 0,
+  endX: 0,
+  startY: 0,
+  endY: 0,
+})
 // 初始化canvas对象上下文
 const initCtx = () => {
   if (!ctx) return
@@ -143,14 +150,14 @@ const handleToolbarClick = (type: string) => {
   } else if (type === 'confirm') {
     // 保存剪切板
     // 将裁剪范围内的canvas画布转换成base64图片并且保存到剪切板
-    const pos = Object.values(shotRectanglePos)
-    saveCanvasToImage(...(pos as [number, number, number, number]), true)
+    const { startX, startY, endX, endY } = shotRectFourCornersPos.value
+    saveCanvasToImage(startX, startY, endX - startX, endY - startY, true)
     emits('update:modelValue', false)
   } else if (type === 'save') {
     // 下载
     // 将裁剪范围内的canvas画布转换成base64图片并且下载
-    const pos = Object.values(shotRectanglePos)
-    saveCanvasToImage(...(pos as [number, number, number, number]), false)
+    const { startX, startY, endX, endY } = shotRectFourCornersPos.value
+    saveCanvasToImage(startX, startY, endX - startX, endY - startY, false)
     emits('update:modelValue', false)
   } else if (type === 'brush') {
     setBrushStatus(true)
@@ -158,30 +165,9 @@ const handleToolbarClick = (type: string) => {
 }
 // 判断坐标是否在截图框内
 const judgeIsInScreenShot = (x: number, y: number) => {
-  const {
-    x: rectX,
-    y: rectY,
-    width: rectWidth,
-    height: rectHeight,
-  } = shotRectanglePos
-  // 截图框矩形四个角的坐标
-
-  const pos: FourCornersPositon = {
-    startX: rectX,
-    startY: rectY,
-    endX: rectX + rectWidth,
-    endY: rectY + rectHeight,
-  }
-  if (rectWidth < 0) {
-    pos.startX += rectWidth
-    pos.endX = pos.startX - rectWidth
-  }
-  if (rectHeight < 0) {
-    pos.startY += rectHeight
-    pos.endY = pos.endY - rectHeight
-  }
-  if (x < pos.startX || x > pos.endX) return false
-  if (y < pos.startY || y > pos.endY) return false
+  const { startX, endX, startY, endY } = shotRectFourCornersPos.value
+  if (x < startX || x > endX) return false
+  if (y < startY || y > endY) return false
   return true
 }
 
@@ -210,27 +196,21 @@ const generateToolbar = () => {
   // 显示toolbar
   toolbarStatus.value = true
   // 计算toolbar 的位置
-  const { width: rectWidth, height: rectHeight } = shotRectanglePos
-  // 当截图框宽度高度小于0时候 需要重置鼠标初次点击坐标为左上角坐标
-  if (rectWidth < 0) {
-    mousePos[0] += rectWidth
-  }
-  if (rectHeight < 0) {
-    mousePos[1] += rectHeight
-  }
+
+  const { startX, endX, startY, endY } = shotRectFourCornersPos.value
 
   nextTick(() => {
     const { clientWidth: toolbarW, clientHeight: toolbarH } =
       toolbarContainer.value!
-    const toolbarX = mousePos[0] + Math.abs(rectWidth) / 2
+    const toolbarX = startX + (endX - startX) / 2
     let toolbarY
 
     // toolbar默认显示在截图框下方 如果下方的位置超出屏幕范围 则显示到截图框上方
-    const distanceBottom = mousePos[1] + Math.abs(rectHeight) + 20 + toolbarH
+    const distanceBottom = endY + 20 + toolbarH
     if (distanceBottom > window.innerHeight) {
-      toolbarY = mousePos[1] - 10 - toolbarH
+      toolbarY = startY - 10 - toolbarH
     } else {
-      toolbarY = mousePos[1] + Math.abs(rectHeight) + 10
+      toolbarY = endY + 10
     }
     toolLeft.value = toolbarX - toolbarW / 2
     toolTop.value = toolbarY
@@ -317,6 +297,13 @@ const handleCanvasMouseMove = (e: MouseEvent) => {
       y: startY,
       width: rectWidth,
       height: rectHeight,
+    }
+    // 设置截图框四个角的位置信息
+    shotRectFourCornersPos.value = {
+      startX: Math.min(startX, endX),
+      endX: Math.max(startX, endX),
+      startY: Math.min(startY, endY),
+      endY: Math.max(startY, endY),
     }
 
     shotRectanglePos = { ...shotRectanglePos, ...pos }
@@ -456,3 +443,4 @@ const init = () => {
 </script>
 
 <style scoped lang="scss" src="../style/screen-shot..scss"></style>
+./useBrush
