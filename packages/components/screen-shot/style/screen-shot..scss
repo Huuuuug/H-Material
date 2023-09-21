@@ -13,12 +13,58 @@
   left: 0;
   min-width: 275px;
   padding: 10px;
+  display: flex;
+
+  .toolbar-item {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    float: left;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   .close {
     background-image: url("../assets/close.png");
     background-size: cover;
+   
   
     &:hover {
       background-image: url("../assets/close-hover.png");
+    }
+  }
+  .confirm {
+    background-image: url("../assets/confirm.png");
+    background-size: cover;
+
+
+    &:hover {
+      background-image: url("../assets/confirm-hover.png");
+    }
+  }
+  .brush {
+    background-image: url("../assets/brush.png");
+    background-size: cover;
+
+    &:hover {
+      background-image: url("../assets/brush-hover.png");
+    }
+
+    &:active {
+      background-image: url("../assets/brush-click.png");
+    }
+  }
+  .save {
+    background-image: url("../assets/save.png");
+    background-size: cover;
+
+    &:hover {
+      background-image: url("../assets/save-hover.png");
+    }
+
+    &:active {
+      background-image: url("../assets/save-click.png");
     }
   }
 }

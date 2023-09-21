@@ -8,8 +8,9 @@
     <h-button class="btn" type="info" @click="changeStatus(true)"
       >Info</h-button
     >
+    <!-- <input type="color" /> -->
     <img src="./assets/demo-img.jpeg" alt="" />
-    <h-screen-shot v-if="isShow" />
+    <h-screen-shot v-model="isShow" />
   </div>
 </template>
 <script lang="ts" setup>
@@ -37,11 +38,11 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  /* background-color: black; */
 
   img {
     width: 1500px;
-    height: 900px;
+    height: 500px;
     margin-top: 20px;
   }
 }
