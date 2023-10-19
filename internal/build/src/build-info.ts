@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { hOutput } from './utils/paths'
+import { hOutput } from '@h-material/build-utils'
 import { PKG_NAME } from './constants'
 import type { ModuleFormat } from 'rollup'
 

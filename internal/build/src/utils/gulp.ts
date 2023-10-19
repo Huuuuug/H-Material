@@ -1,4 +1,4 @@
-import { buildRoot } from '../../../build-utils/src/index'
+import { buildRoot } from '@h-material/build-utils'
 import { run } from './process'
 import type { TaskFunction } from 'gulp'
 

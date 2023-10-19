@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { sidebars } from './config/sidebars'
+import { mdPlugin } from './config/plugins'
 import type { DefaultTheme } from 'vitepress'
 
 const nav: DefaultTheme.NavItem[] = [
@@ -26,5 +27,8 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Huuuuug/H-Material' },
     ],
+  },
+  markdown: {
+    config: (md) => mdPlugin(md),
   },
 })

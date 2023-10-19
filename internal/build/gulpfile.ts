@@ -5,7 +5,7 @@ import { parallel, series } from 'gulp'
 import {
   buildOutput,
   hOutput,
-  hPackage,
+  hmPackage,
   projRoot,
 } from '@h-material/build-utils'
 import { buildConfig, run, runTask, withTaskName } from './src'
@@ -24,7 +24,7 @@ export const copyFullStyle = async () => {
 
 export const copyFiles = () =>
   Promise.all([
-    copyFile(hPackage, path.join(hOutput, 'package.json')),
+    copyFile(hmPackage, path.join(hOutput, 'package.json')),
     copyFile(
       path.resolve(projRoot, 'README.md'),
       path.resolve(hOutput, 'README.md')

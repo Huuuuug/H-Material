@@ -1,21 +1,28 @@
 <template>
   <div class="playground">
-    <!-- <h-button type="default">Default</h-button>
+    <h-button type="default">Default</h-button>
     <h-button type="primary">Primary</h-button>
     <h-button type="success">Success</h-button>
     <h-button type="warning">Warning</h-button>
-    <h-button type="danger">Danger</h-button> -->
+    <h-button type="danger">Danger</h-button>
+    <h-divider content-position="right" border-style="dashed"
+      >kahsdkahdkah</h-divider
+    >
     <h-button class="btn" type="info" @click="changeStatus(true)"
       >Info</h-button
     >
-    <!-- <input type="color" /> -->
-    <img src="./assets/demo-img.jpeg" alt="" />
-    <h-screen-shot v-model="isShow" />
+    <h-icon>
+      <Edit />
+    </h-icon>
+    <h-icon size="30">
+      <Plus />
+    </h-icon>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { HButton, HScreenShot } from '@h-material/components'
+import { HButton, HDivider, HIcon } from '@h-material/components'
+import { Edit, Plus } from '@element-plus/icons-vue'
 
 const isShow = ref(false)
 

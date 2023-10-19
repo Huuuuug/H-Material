@@ -1,3 +1,8 @@
+---
+title: Button
+lang: zh
+---
+
 # Button 按钮
 
 Commonly used button.
@@ -6,6 +11,8 @@ Commonly used button.
 
 使用 type、plain、round 和 circle 来定义按钮的样式。
 
-```
-11
-```
+:::demo
+
+button/basic
+
+:::

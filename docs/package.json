@@ -11,10 +11,21 @@
     "build": "vitepress build ."
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@vueuse/core": "^10.5.0",
+    "element-plus": "^2.4.1",
     "h-material": "^0.0.2",
+    "normalize.css": "^8.0.1",
     "vue": "^3.2.45"
   },
   "devDependencies": {
+    "@h-material/build-utils": "workspace:^0.0.1",
+    "@types/markdown-it": "^13.0.4",
+    "@types/markdown-it-container": "^2.0.8",
+    "chalk": "4.1.2",
+    "consola": "^2.15.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
     "vitepress": "1.0.0-alpha.31"
   }
 }

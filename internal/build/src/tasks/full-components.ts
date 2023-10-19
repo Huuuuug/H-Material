@@ -6,8 +6,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
 import vue from 'rollup-plugin-vue'
 
+import { hOutput, hRoot } from '@h-material/build-utils'
 import { generateExternal, writeBundles } from '../utils/rollup'
-import { hOutput, hRoot } from '../utils/paths'
 import { target } from '../build-info'
 import type { OutputOptions, Plugin } from 'rollup'
 

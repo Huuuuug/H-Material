@@ -1,4 +1,4 @@
-import { hPackage } from './paths'
+import { hmPackage } from '@h-material/build-utils'
 import type { OutputOptions, RollupBuild } from 'rollup'
 import type { ProjectManifest } from '@pnpm/types'
 
@@ -24,7 +24,7 @@ export const getPackageDependencies = (
 }
 /** rollup */
 export const generateExternal = async (options: { full: boolean }) => {
-  const { dependencies, peerDependencies } = getPackageDependencies(hPackage)
+  const { dependencies, peerDependencies } = getPackageDependencies(hmPackage)
   return (id: string) => {
     const packages: string[] = peerDependencies
     if (!options.full) {

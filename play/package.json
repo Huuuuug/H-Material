@@ -10,6 +10,7 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "@h-material/components": "workspace:^1.0.0"
   },
   "devDependencies": {
