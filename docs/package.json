@@ -8,7 +8,8 @@
   "main": "index.ts",
   "scripts": {
     "dev": "vitepress dev .",
-    "build": "vitepress build ."
+    "build": "vitepress build .",
+    "preview": "vitepress preview . --port 8080"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",

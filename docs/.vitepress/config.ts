@@ -18,6 +18,7 @@ export default defineConfig({
   title: `H Material`,
   description: 'a Vue 3 based component library for designers and developers',
   lang: 'cn-ZH',
+  base: '/H-Material/',
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: 'H Material',
