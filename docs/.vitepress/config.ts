@@ -21,7 +21,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: 'H Material',
-    outline: 10,
+    outline: 2,
     nav,
     sidebar: sidebars,
     socialLinks: [

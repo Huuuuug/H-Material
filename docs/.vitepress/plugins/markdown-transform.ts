@@ -32,14 +32,9 @@ export function MarkdownTransform(): Plugin {
           `const demos = import.meta.globEager('../examples/${componentId}/*.vue')`,
         ],
       }
+      // TODO 暂时这样写 后续修改
+      if (componentId === 'index') return code
       code = transformVpScriptSetup(code, append)
-      console.log(
-        combineMarkdown(
-          code,
-          [combineScriptSetup(append.scriptSetups), ...append.headers],
-          append.footers
-        )
-      )
 
       return combineMarkdown(
         code,
