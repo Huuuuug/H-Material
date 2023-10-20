@@ -44,8 +44,6 @@ export const mdPlugin = (md: MarkdownIt) => {
           )
         }
         if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
-        console.log(source)
-
         // opening tag
         return `<Demo
                   :demos="demos"

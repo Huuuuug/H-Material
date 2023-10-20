@@ -15,8 +15,5 @@ export default define<Theme>({
     // 注册ElementPlus
     app.use(ElementPlus)
     app.component('Demo', VPDemo)
-    // globals.forEach(([name, Comp]) => {
-    //   app.component(name, Comp)
-    // })
   },
 })
